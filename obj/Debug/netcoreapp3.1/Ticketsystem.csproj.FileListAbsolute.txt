@@ -1,0 +1,12 @@
+/Users/izabelditchev/Projects/Ticketsystem/Ticketsystem/bin/Debug/netcoreapp3.1/Ticketsystem.deps.json
+/Users/izabelditchev/Projects/Ticketsystem/Ticketsystem/bin/Debug/netcoreapp3.1/Ticketsystem.runtimeconfig.json
+/Users/izabelditchev/Projects/Ticketsystem/Ticketsystem/bin/Debug/netcoreapp3.1/Ticketsystem.runtimeconfig.dev.json
+/Users/izabelditchev/Projects/Ticketsystem/Ticketsystem/bin/Debug/netcoreapp3.1/Ticketsystem.dll
+/Users/izabelditchev/Projects/Ticketsystem/Ticketsystem/bin/Debug/netcoreapp3.1/Ticketsystem.pdb
+/Users/izabelditchev/Projects/Ticketsystem/Ticketsystem/obj/Debug/netcoreapp3.1/Ticketsystem.csprojAssemblyReference.cache
+/Users/izabelditchev/Projects/Ticketsystem/Ticketsystem/obj/Debug/netcoreapp3.1/Ticketsystem.AssemblyInfoInputs.cache
+/Users/izabelditchev/Projects/Ticketsystem/Ticketsystem/obj/Debug/netcoreapp3.1/Ticketsystem.AssemblyInfo.cs
+/Users/izabelditchev/Projects/Ticketsystem/Ticketsystem/obj/Debug/netcoreapp3.1/Ticketsystem.csproj.CoreCompileInputs.cache
+/Users/izabelditchev/Projects/Ticketsystem/Ticketsystem/obj/Debug/netcoreapp3.1/Ticketsystem.dll
+/Users/izabelditchev/Projects/Ticketsystem/Ticketsystem/obj/Debug/netcoreapp3.1/Ticketsystem.pdb
+/Users/izabelditchev/Projects/Ticketsystem/Ticketsystem/obj/Debug/netcoreapp3.1/Ticketsystem.genruntimeconfig.cache
