@@ -16,6 +16,47 @@ namespace Ticketing_System
         public string assigned {get; set;}
         public int numberwatching {get; set;}
         public string[] watching {get; set;}
+
+        public Ticket (string resp)
+        {
+            if (resp == "Y")
+            {
+             Console.WriteLine("Enter the ticket ID.");
+
+                        ticketID = Console.ReadLine();
+
+                        Console.WriteLine("Enter the ticket summary.");
+
+                        summary = Console.ReadLine();
+
+                        Console.WriteLine("Enter the ticket status.");
+
+                        status = Console.ReadLine();
+
+                        Console.WriteLine("Enter Priority.");
+
+                        priority = Console.ReadLine();
+
+                        Console.WriteLine("Enter Submitter.");
+
+                        submitter = Console.ReadLine();
+
+                        Console.WriteLine("Enter who is Assigned.");
+
+                        assigned = Console.ReadLine();
+
+                        Console.WriteLine("How many are watching the ticket?");
+
+                        numberwatching = Convert.ToInt32(Console.ReadLine());
+
+                        watching = new string[numberwatching];
+                        for (int j = 0; j < numberwatching; j++)
+                        {
+                            Console.WriteLine("Enter full name");
+                            watching[j] = Console.ReadLine();
+                       }          
+             } else Console.WriteLine("Good Bye");
+        }
     }
 }    
         
