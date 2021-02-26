@@ -1,36 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Ticketing_System
 {
-    public class Ticket
+    class Ticket
     {
-        public UInt64 movieId { get; set; }
-        // private field
-        string _title;
-        public string title
-        {
-            get
-            {
-                return this._title;
-            }
-            set
-            {
-                // if there is a comma(,) in the title, wrap it in quotes
-                this._title = value.IndexOf(',') != -1 ? $"\"{value}\"" : value;
-            }
-        }
-        public List<string> genres { get; set; }
-
-        // constructor
-        public Movie()
-        {
-            genres = new List<string>();
-        }
-
-        public string Display()
-        {
-            return $"Id: {movieId}\nTitle: {title}\nGenres: {string.Join(", ", genres)}\n";
-        }
+        public string ticketID {get; set;}
+        public string summary {get; set;}
+        public string status {get; set;}
+        public string priority {get; set;}
+        public string submitter {get; set;}
+        public string assigned {get; set;}
+        public int numberwatching {get; set;}
+        public string[] watching {get; set;}
     }
-}
+}    
+        
