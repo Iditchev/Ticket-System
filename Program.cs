@@ -7,23 +7,7 @@ namespace Ticketing_System
         static void Main(string[] args)
         {
             string file = "Tickets.csv";
-            //string choice;
-            //do
-            //{
-                // ask user a question
-                //Console.WriteLine("1) View tickets.");
-                //Console.WriteLine("2) Add ticket record.");
-                //Console.WriteLine("Enter any other key to exit.");
-                //// input response
-                //choice = Console.ReadLine();
-
-                //if (choice == "1")
-                //{
-                //    // TODO: read data from file
-                //}
-                //else if (choice == "2")
-                {
-                    // create file from data
+           
                     StreamWriter sw = new StreamWriter(file);
                     string resp;
                     do
@@ -77,7 +61,7 @@ namespace Ticketing_System
 
                     sw.Close();
                 }
-            //} while (choice == "1" || choice == "2");
+            
         }
     }
 }
