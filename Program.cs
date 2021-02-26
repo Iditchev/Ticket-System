@@ -19,7 +19,7 @@ namespace Ticketing_System
                         // if the response is anything other than "Y", stop asking
                         if (resp != "Y") { break; }
                         Ticket newticket = new Ticket(resp);
-                        
+                        newticket.AddTickettoFile(file); 
                         
                     } while (resp == "Y");
 
@@ -28,4 +28,3 @@ namespace Ticketing_System
             
         }
     }
-}
