@@ -61,11 +61,8 @@ namespace Ticketing_System
          public void AddTickettoFile (string file)   
          {
              StreamWriter sw = new StreamWriter(file);
-             sw.WriteLine("{0},{1},{2},{3},{4},{5},", ticketID, summary, status, priority, submitter, assigned);
-                        foreach (string watch in watching)
-                        {
-                            sw.Write("{0}|", watch);
-                        }
+             sw.WriteLine($"{ticketID},{summary},{priority},{submitter}({assigned}),{string.Join("|", watching)}");
+                        
                          sw.Close();
          }
    
