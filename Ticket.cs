@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Ticketing_System
 {
@@ -17,7 +18,7 @@ namespace Ticketing_System
         public int numberwatching {get; set;}
         public string[] watching {get; set;}
 
-        public Ticket (string resp)
+        public  Ticket (string resp)
         {
             if (resp == "Y")
             {
@@ -57,6 +58,19 @@ namespace Ticketing_System
                        }          
              } else Console.WriteLine("Good Bye");
         }
+         public void AddTickettoFile (string file)   
+         {
+             StreamWriter sw = new StreamWriter(file);
+             sw.WriteLine("{0},{1},{2},{3},{4},{5},", ticketID, summary, status, priority, submitter, assigned);
+                        foreach (string watch in watching)
+                        {
+                            sw.Write("{0}|", watch);
+                        }
+                         sw.Close();
+         }
+   
+   
     }
+
 }    
         
