@@ -189,8 +189,8 @@ public class Enchancement : Ticket
         public string DueDate {get; set;}
 
          public override void AskUser (string resp)
-{
-    Console.WriteLine("Enter the ticket ID.");
+            {
+                Console.WriteLine("Enter the ticket ID.");
 
                         ticketID = Console.ReadLine();
 
@@ -230,7 +230,13 @@ public class Enchancement : Ticket
                        Console.WriteLine("What is the Due Date?");
                        DueDate = Console.ReadLine();
 
-                       
-    }
-  }    
-        
+             }
+              public override void AddTickettoFile (string file)   
+         {
+             StreamWriter sw = new StreamWriter(file);
+             sw.WriteLine($"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{ProjectName},{DueDate}");
+                        
+                         sw.Close();
+         }
+         }    
+}    
