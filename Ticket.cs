@@ -119,6 +119,12 @@ public class Bug : Ticket
                          sw.Close();
          }
 }
-
+public class Enchancement : Ticket
+{
+    public string Software {get; set;}
+    public string Cost {get; set;}
+    public string Reason {get; set;}
+    public string Estimate{get;set;}
+}
 }    
         
