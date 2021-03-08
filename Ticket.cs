@@ -125,6 +125,56 @@ public class Enchancement : Ticket
     public string Cost {get; set;}
     public string Reason {get; set;}
     public string Estimate{get;set;}
-}
-}    
+
+        public override void AskUser(string resp)
+        {
+            Console.WriteLine("Enter the ticket ID.");
+
+                        ticketID = Console.ReadLine();
+
+                        Console.WriteLine("Enter the ticket summary.");
+
+                        summary = Console.ReadLine();
+
+                        Console.WriteLine("Enter the ticket status.");
+
+                        status = Console.ReadLine();
+
+                        Console.WriteLine("Enter Priority.");
+
+                        priority = Console.ReadLine();
+
+                        Console.WriteLine("Enter Submitter.");
+
+                        submitter = Console.ReadLine();
+
+                        Console.WriteLine("Enter who is Assigned.");
+
+                        assigned = Console.ReadLine();
+
+                        Console.WriteLine("How many are watching the ticket?");
+
+                        numberwatching = Convert.ToInt32(Console.ReadLine());
+
+                        watching = new string[numberwatching];
+                        for (int j = 0; j < numberwatching; j++)
+                        {
+                            Console.WriteLine("Enter full name");
+                            watching[j] = Console.ReadLine();
+                       } 
+                       Console.WriteLine("What is the Software");
+                       Software = Console.ReadLine();
+
+                       Console.WriteLine ("How much is the cost?");
+                       Cost = Console.ReadLine();
+
+                       Console.WriteLine("What is the reason?");
+                       Reason = Console.ReadLine ();
+
+                       Console.WriteLine("What is the estimate?");
+                       Estimate = Console.ReadLine();
+
+        }
+        
+   }   }    
         
