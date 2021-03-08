@@ -111,6 +111,13 @@ public class Bug : Ticket
                        Console.WriteLine("Enter Severity of ticket");
                        Severity = Console.ReadLine();      
 }
+   public override void AddTickettoFile (string file)   
+         {
+             StreamWriter sw = new StreamWriter(file);
+             sw.WriteLine($"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{Severity}");
+                        
+                         sw.Close();
+         }
 }
 
 }    
