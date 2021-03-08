@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Ticketing_System
 {
-    class Ticket
+   public abstract class Ticket
     {
         public string ticketID {get; set;}
         public string summary {get; set;}
@@ -18,7 +18,7 @@ namespace Ticketing_System
         public int numberwatching {get; set;}
         public string[] watching {get; set;}
 
-        public  Ticket (string resp)
+        public virtual void DefaultTicket (string resp)
         {
             if (resp == "Y")
             {
@@ -58,7 +58,7 @@ namespace Ticketing_System
                        }          
              } else Console.WriteLine("Good Bye");
         }
-         public void AddTickettoFile (string file)   
+         public virtual void AddTickettoFile (string file)   
          {
              StreamWriter sw = new StreamWriter(file);
              sw.WriteLine($"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)}");
