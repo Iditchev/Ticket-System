@@ -175,6 +175,12 @@ public class Enchancement : Ticket
                        Estimate = Console.ReadLine();
 
         }
-        
+        public override void AddTickettoFile (string file)   
+         {
+             StreamWriter sw = new StreamWriter(file);
+             sw.WriteLine($"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{Software},{Cost},{Reason},{Estimate}");
+                        
+                         sw.Close();
+         }
    }   }    
         
