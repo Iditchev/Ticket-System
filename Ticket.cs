@@ -68,6 +68,9 @@ namespace Ticketing_System
    
    
     }
-
+public class Bug : Ticket
+{
+ public string Severity {get; set;}
+}
 }    
         
