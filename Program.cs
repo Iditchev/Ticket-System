@@ -19,6 +19,9 @@ namespace Ticketing_System
                         // input the response
                         resp = Console.ReadLine().ToUpper();
                         if (resp != "Y") { break; }
+
+                        
+                       
                         Console.WriteLine("Choose the ticket type:");
                         Console.WriteLine("1. Bug/Defect");
                         Console.WriteLine("2. Enhancement");
@@ -27,7 +30,7 @@ namespace Ticketing_System
                         string TicketType = Console.ReadLine();
                         if (TicketType == "1")
                         {
-                            Bug newbug = new Bug
+                            Bug newbug = new Bug(resp);
                             newbug.Bugfile(Bugfile);
                         }
 

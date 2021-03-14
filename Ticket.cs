@@ -18,9 +18,9 @@ namespace Ticketing_System
         public int numberwatching {get; set;}
         public string[] watching {get; set;}
 
-        public virtual void AskUser (string resp)
-        {
-            if (resp == "Y")
+        public virtual void AskUser () 
+        
+            
             {
              Console.WriteLine("Enter the ticket ID.");
 
@@ -56,8 +56,8 @@ namespace Ticketing_System
                             Console.WriteLine("Enter full name");
                             watching[j] = Console.ReadLine();
                        }          
-             } else Console.WriteLine("Good Bye");
-        }
+            }
+        
          public virtual void AddTickettoFile (string file)   
          {
              StreamWriter sw = new StreamWriter(file);
@@ -72,7 +72,7 @@ public class Bug : Ticket
 {
  public string Severity {get; set;}
 
- public override void AskUser (string resp)
+ public override void AskUser ()
 {
     Console.WriteLine("Enter the ticket ID.");
 
@@ -126,7 +126,7 @@ public class Enchancement : Ticket
     public string Reason {get; set;}
     public string Estimate{get;set;}
 
-        public override void AskUser(string resp)
+        public override void AskUser()
         {
             Console.WriteLine("Enter the ticket ID.");
 
@@ -188,7 +188,7 @@ public class Enchancement : Ticket
         public string ProjectName {get; set;}
         public string DueDate {get; set;}
 
-         public override void AskUser (string resp)
+         public override void AskUser ()
             {
                 Console.WriteLine("Enter the ticket ID.");
 
