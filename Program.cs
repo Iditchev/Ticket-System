@@ -50,7 +50,7 @@ namespace Ticketing_System
                             newtask.AddTickettoFile(TaskFile);
                         }
 
-                        else {Console.WriteLine("Invalid Input");}
+                        
                         
                     } while (resp == "Y");
 
