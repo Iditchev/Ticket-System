@@ -6,7 +6,9 @@ namespace Ticketing_System
     {
         static void Main(string[] args)
         {
-            string file = "Tickets.csv";
+            string Bugfile = "Tickets.csv";
+            string EnchancementFile ="Enchancements.csv";
+            string TaskFile = "Task.csv";
            
                     
                     string resp;
@@ -18,6 +20,15 @@ namespace Ticketing_System
                         resp = Console.ReadLine().ToUpper();
                         // if the response is anything other than "Y", stop asking
                         if (resp != "Y") { break; }
+                        Console.WriteLine("Choose the ticket type:");
+                        Console.WriteLine("1. Bug/Defect");
+                        Console.WriteLine("2. Enhancement");
+                        Console.WriteLine("3. Task");
+                        string TicketType = Console.ReadLine();
+                        if (TicketType == "1")
+                        {
+                            Bug newbug = new Bug
+                        }
                         Ticket newticket = new Ticket(resp);
                         newticket.AddTickettoFile(file); 
                         
