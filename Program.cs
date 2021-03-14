@@ -28,9 +28,12 @@ namespace Ticketing_System
                         if (TicketType == "1")
                         {
                             Bug newbug = new Bug
+                            newbug.Bugfile(Bugfile);
                         }
                         Ticket newticket = new Ticket(resp);
                         newticket.AddTickettoFile(file); 
+
+
                         
                     } while (resp == "Y");
 
