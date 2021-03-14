@@ -30,24 +30,24 @@ namespace Ticketing_System
                         string TicketType = Console.ReadLine();
                         if (TicketType == "1")
                         {
-                            Bug newbug = new Bug(resp);
-                            newbug.Bugfile(Bugfile);
+                            Bug newbug = new Bug();
+                            newbug.AddTickettoFile(Bugfile);
                         }
 
                         if (TicketType == "2")
                         {
-                            Enhancement newenchanement = new Enhancement
-                            newenchanement.EnchancementFile(EnchancementFile);
+                            Enhancement newenhancement = new Enhancement();
+                            newenhancement.AddTickettoFile(EnchancementFile);
                         
                         }
                         
                         if (TicketType == "3")
                         {
-                            Task newtask = new Task
-                            newtask.TaskFile(TaskFile);
+                            Task newtask = new Task ();
+                            newtask.AddTickettoFile(TaskFile);
                         }
 
-                        else (Console.Writeline("Invalid Input"))
+                        else {Console.WriteLine("Invalid Input");}
                         
                     } while (resp == "Y");
 

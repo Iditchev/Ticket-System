@@ -119,7 +119,7 @@ public class Bug : Ticket
                          sw.Close();
          }
 }
-public class Enchancement : Ticket
+public class Enhancement : Ticket
 {
     public string Software {get; set;}
     public string Cost {get; set;}
