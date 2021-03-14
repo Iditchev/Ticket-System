@@ -18,22 +18,33 @@ namespace Ticketing_System
                         Console.WriteLine("Enter a Ticket (Y/N)?");
                         // input the response
                         resp = Console.ReadLine().ToUpper();
-                        // if the response is anything other than "Y", stop asking
                         if (resp != "Y") { break; }
                         Console.WriteLine("Choose the ticket type:");
                         Console.WriteLine("1. Bug/Defect");
                         Console.WriteLine("2. Enhancement");
                         Console.WriteLine("3. Task");
+                        
                         string TicketType = Console.ReadLine();
                         if (TicketType == "1")
                         {
                             Bug newbug = new Bug
                             newbug.Bugfile(Bugfile);
                         }
-                        Ticket newticket = new Ticket(resp);
-                        newticket.AddTickettoFile(file); 
 
+                        if (TicketType == "2")
+                        {
+                            Enhancement newenchanement = new Enhancement
+                            newenchanement.EnchancementFile(EnchancementFile);
+                        
+                        }
+                        
+                        if (TicketType == "3")
+                        {
+                            Task newtask = new Task
+                            newtask.TaskFile(TaskFile);
+                        }
 
+                        else (Console.Writeline("Invalid Input"))
                         
                     } while (resp == "Y");
 
