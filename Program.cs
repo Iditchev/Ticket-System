@@ -31,12 +31,14 @@ namespace Ticketing_System
                         if (TicketType == "1")
                         {
                             Bug newbug = new Bug();
+                            newbug.AskUser();
                             newbug.AddTickettoFile(Bugfile);
                         }
 
                         if (TicketType == "2")
                         {
                             Enhancement newenhancement = new Enhancement();
+                            newenhancement.AskUser();
                             newenhancement.AddTickettoFile(EnchancementFile);
                         
                         }
@@ -44,6 +46,7 @@ namespace Ticketing_System
                         if (TicketType == "3")
                         {
                             Task newtask = new Task ();
+                            newtask.AskUser();
                             newtask.AddTickettoFile(TaskFile);
                         }
 
