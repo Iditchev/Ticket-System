@@ -60,7 +60,7 @@ namespace Ticketing_System
         
          public virtual void AddTickettoFile (string file)   
          {
-             StreamWriter sw = new StreamWriter(file);
+             StreamWriter sw = new StreamWriter(file, true);
              sw.WriteLine($"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)}");
                         
                          sw.Close();
@@ -113,7 +113,7 @@ public class Bug : Ticket
 }
    public override void AddTickettoFile (string file)   
          {
-             StreamWriter sw = new StreamWriter(file);
+             StreamWriter sw = new StreamWriter(file, true);
              sw.WriteLine($"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{Severity}");
                         
                          sw.Close();
@@ -177,7 +177,7 @@ public class Enhancement : Ticket
         }
         public override void AddTickettoFile (string file)   
          {
-             StreamWriter sw = new StreamWriter(file);
+             StreamWriter sw = new StreamWriter(file, true);
              sw.WriteLine($"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{Software},{Cost},{Reason},{Estimate}");
                         
                          sw.Close();
@@ -233,7 +233,7 @@ public class Enhancement : Ticket
              }
               public override void AddTickettoFile (string file)   
          {
-             StreamWriter sw = new StreamWriter(file);
+             StreamWriter sw = new StreamWriter(file, true);
              sw.WriteLine($"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{ProjectName},{DueDate}");
                         
                          sw.Close();
