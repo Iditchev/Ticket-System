@@ -59,6 +59,7 @@ namespace Ticketing_System
             }
         
          public virtual void AddTickettoFile (string file)   
+
          {
              StreamWriter sw = new StreamWriter(file, true);
              sw.WriteLine($"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)}");
@@ -66,7 +67,10 @@ namespace Ticketing_System
                          sw.Close();
          }
    
-   
+        public virtual string Display ()
+        {
+            return $"Id: {ticketID}\nSummary: {summary}\nStatus: {status}\nPriority: {priority}\nSubmitter: {submitter}\nAssigned: {assigned}\nWatching: {string.Join(", ", watching)}\n";
+        }
     }
 public class Bug : Ticket
 {
@@ -118,7 +122,13 @@ public class Bug : Ticket
                         
                          sw.Close();
          }
+        public override string Display()
+        {
+            return $"Id: {ticketID}\nSummary: {summary}\nStatus: {status}\nPriority: {priority}\nSubmitter: {submitter}\nAssigned: {assigned}\nWatching: {string.Join(", ", watching)}\nSeverity: {Severity}\n";
+        }
+    
 }
+
 public class Enhancement : Ticket
 {
     public string Software {get; set;}
@@ -182,7 +192,12 @@ public class Enhancement : Ticket
                         
                          sw.Close();
          }
-   }   
+        public override string Display()
+        {
+            return $"Id: {ticketID}\nSummary: {summary}\nStatus: {status}\nPriority: {priority}\nSubmitter: {submitter}\nAssigned: {assigned}\nWatching: {string.Join(", ", watching)}\nSoftware: {Software}\nCost: {Cost}\nReason: {Reason}\nEstimate: {Estimate}\n";
+        }
+ 
+}   
     public class Task : Ticket
     {
         public string ProjectName {get; set;}
@@ -238,5 +253,9 @@ public class Enhancement : Ticket
                         
                          sw.Close();
          }
-         }    
+        public override string Display()
+        {
+            return $"Id: {ticketID}\nSummary: {summary}\nStatus: {status}\nPriority: {priority}\nSubmitter: {submitter}\nAssigned: {assigned}\nWatching: {string.Join(", ", watching)}\nProject Name: {ProjectName}\nDue Date: {DueDate}\n";
+        }
+    }    
 }    
