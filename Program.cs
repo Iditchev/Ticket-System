@@ -73,14 +73,16 @@ namespace Ticketing_System
                              {
                              Console.WriteLine("Enter Status you are searching for:");
                              string search = Console.ReadLine().ToLower();
-                             var Status =  string.Concat($"{newbugfile.Tickets.Where(m => m.status.ToLower().Contains((search)))},{newEnhancementFile.Tickets.Where(m => m.status.ToLower().Contains((search)))},{newtaskfile.Tickets.Where(m => m.status.ToLower().Contains((search)))}");
+                             var bugfilesearch =  newbugfile.Tickets.Where(m => m.status.ToLower().Contains((search)));
+                             var enhancementfilesearch = newEnhancementFile.Tickets.Where(m => m.status.ToLower().Contains((search)));
+                             var taskfilesearch = newtaskfile.Tickets.Where(m => m.status.ToLower().Contains((search)));
+                                var Statuslist = bugfilesearch.Concat(enhancementfilesearch).Concat(taskfilesearch);
                             
-                                String[] Statuses = Status.Split(',');
                                 // LINQ - Count aggregation method
-                                 Console.WriteLine($"There are {Status.Count()} tickets with \"{search}\" as the Status:");
-                                    foreach(int t in Status)
+                                 Console.WriteLine($"There are {Statuslist.Count()} tickets with \"{search}\" as the Status:");
+                                    foreach(Ticket t in Statuslist)
                                      {
-                                        Console.WriteLine($"  {t}");
+                                        Console.WriteLine(t.Display());
                                      }  
                              }         
                         }
