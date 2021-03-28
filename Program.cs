@@ -71,7 +71,7 @@ namespace Ticketing_System
                             newtaskfile.FileRead(TaskFile);
                              if (searchtype =="1")  
                              {
-                             Console.WriteLine("Enter Status you are searching for:");
+                             Console.WriteLine("Enter the Status you are searching for:");
                              string search = Console.ReadLine().ToLower();
                              var bugfilesearch =  newbugfile.Tickets.Where(m => m.status.ToLower().Contains((search)));
                              var enhancementfilesearch = newEnhancementFile.Tickets.Where(m => m.status.ToLower().Contains((search)));
@@ -84,7 +84,40 @@ namespace Ticketing_System
                                      {
                                         Console.WriteLine(t.Display());
                                      }  
-                             }         
+                             }   
+                             else if (searchtype == "2")
+                             {
+                                 Console.WriteLine("Enter the Priority you are searching for:");
+                                    string search = Console.ReadLine().ToLower();
+                                    var bugfilesearch =  newbugfile.Tickets.Where(m => m.priority.ToLower().Contains((search)));
+                                    var enhancementfilesearch = newEnhancementFile.Tickets.Where(m => m.priority.ToLower().Contains((search)));
+                                    var taskfilesearch = newtaskfile.Tickets.Where(m => m.priority.ToLower().Contains((search)));
+                                    var Statuslist = bugfilesearch.Concat(enhancementfilesearch).Concat(taskfilesearch);
+                            
+                                    // LINQ - Count aggregation method
+                                    Console.WriteLine($"There are {Statuslist.Count()} tickets with \"{search}\" as the Priority:");
+                                    foreach(Ticket t in Statuslist)
+                                     {
+                                        Console.WriteLine(t.Display());
+                                     }  
+                             }  
+                             else if (searchtype == "3") 
+                             {
+                                 Console.WriteLine("Enter the Submitter you are searching for:");
+                                    string search = Console.ReadLine().ToLower();
+                                    var bugfilesearch =  newbugfile.Tickets.Where(m => m.submitter.ToLower().Contains((search)));
+                                    var enhancementfilesearch = newEnhancementFile.Tickets.Where(m => m.submitter.ToLower().Contains((search)));
+                                    var taskfilesearch = newtaskfile.Tickets.Where(m => m.submitter.ToLower().Contains((search)));
+                                    var Statuslist = bugfilesearch.Concat(enhancementfilesearch).Concat(taskfilesearch);
+                            
+                                    // LINQ - Count aggregation method
+                                    Console.WriteLine($"There are {Statuslist.Count()} tickets with \"{search}\" as the Submitter:");
+                                    foreach(Ticket t in Statuslist)
+                                     {
+                                        Console.WriteLine(t.Display());
+                                     }  
+                             }  
+                             else {break;}
                         }
                         else if (resp == "3")
                         {
