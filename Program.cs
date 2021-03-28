@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Linq; 
+using System.Collections.Generic;
 namespace Ticketing_System
 {
     class Program
@@ -17,6 +19,7 @@ namespace Ticketing_System
                         // ask a question
                         Console.WriteLine("1) Enter a Ticket");
                         Console.WriteLine("2) Search for Ticket");
+                        Console.WriteLine("3) Display Tickets");
                         Console.WriteLine("Anything else to Exit");
                         // input the response
                         resp = Console.ReadLine();
@@ -59,16 +62,74 @@ namespace Ticketing_System
                           Console.WriteLine("2) Priority");
                           Console.WriteLine("3) Submitter");
 
-                          String search = Console.ReadLine().ToLower();
-                          
-                      }
+                          String searchtype = Console.ReadLine();
+                            BugFile newbugfile = new BugFile();
+                            EnchancementFile newEnhancementFile = new EnchancementFile();
+                            TaskFile newtaskfile = new TaskFile();
+                            newbugfile.FileRead(Bugfile);
+                            newEnhancementFile.FileRead(EnchancementFile);
+                            newtaskfile.FileRead(TaskFile);
+                             if (searchtype =="1")  
+                             {
+                             Console.WriteLine("Enter Status you are searching for:");
+                             string search = Console.ReadLine().ToLower();
+                             var Status =  string.Concat($"{newbugfile.Tickets.Where(m => m.status.ToLower().Contains((search)))},{newEnhancementFile.Tickets.Where(m => m.status.ToLower().Contains((search)))},{newtaskfile.Tickets.Where(m => m.status.ToLower().Contains((search)))}");
+                            
+                                String[] Statuses = Status.Split(',');
+                                // LINQ - Count aggregation method
+                                 Console.WriteLine($"There are {Status.Count()} tickets with \"{search}\" as the Status:");
+                                    foreach(int t in Status)
+                                     {
+                                        Console.WriteLine($"  {t}");
+                                     }  
+                             }         
+                        }
+                        else if (resp == "3")
+                        {
+                            Console.WriteLine("1) Display Bug Tickets");
+                            Console.WriteLine("2) Display Enchancement Tickets");
+                            Console.WriteLine("3) Display Task Tickets");
+                            string TicketType = Console.ReadLine();
+                            BugFile newbugfile = new BugFile();
+                            EnchancementFile newEnhancementFile = new EnchancementFile();
+                            TaskFile newtaskfile = new TaskFile();
+
+                            newbugfile.FileRead(Bugfile);
+                            newEnhancementFile.FileRead(EnchancementFile);
+                            newtaskfile.FileRead(TaskFile);
+                            if (TicketType == "1")
+                            {
+                                  
+                                foreach(Ticket t in newbugfile.Tickets )
+                                {
+                                    Console.WriteLine(t.Display());
+                                 }
+                            }
+                            else if (TicketType == "2")
+                            {
+                                foreach(Ticket t in newEnhancementFile.Tickets)
+                                {
+                                    Console.WriteLine(t.Display());
+                                }
+                            }
+                            else if (TicketType == "3")
+                            {
+                                foreach(Ticket t in newtaskfile.Tickets)
+                                {
+                                    Console.WriteLine(t.Display());
+                                }
+                            }
+                         }               
+
+                    }while (resp == "1"|| resp == "2"|| resp == "3");
+        } 
 
                         
                         
-                    } while (resp == "1"|| resp == "2");
+    } 
 
                    
-                }
+    
             
-        }
-    }
+}
+    
